@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Debug Nest App",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "command": "npm run dev --filter=BE",
+            "outFiles": [
+                "${workspaceFolder}/packages/learn-nest/**/*.js",
+                "!**/node_modules/**"
+            ]
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Debug Next App",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "command": "npm run dev --filter=FE",
+            "outFiles": [
+                "${workspaceFolder}/packages/learn-next-app/**/*.js",
+                "!**/node_modules/**"
+            ]
+        },
+    
+        {
+            "name": "Debug client",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev --filter=client",
+            "serverReadyAction": {
+                "pattern": "started server on .+, url: (https?://.+)",
+                "uriFormat": "%s",
+                "action": "debugWithChrome"
+            }
+        }
+    ]
+}

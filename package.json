@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "lerna run start:dev --stream --parallel",
+    "start:dev": "lerna run start:dev",
+    "start:fe": "lerna run start:dev --scope=learn-next-app",
+    "start:be": "lerna run start:dev --scope=learn-nest",
+    "start:all": "lerna run start:dev --scope={learn-next-app,learn-nest}",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.0.0"
+  }
+}

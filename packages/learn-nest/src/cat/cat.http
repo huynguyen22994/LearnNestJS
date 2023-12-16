@@ -1,0 +1,65 @@
+### Post Cat
+POST http://localhost:3000/cats HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+### Get Cat
+GET http://localhost:3000/cats HTTP/1.1
+content-type: application/json
+
+### Param Cat
+GET http://localhost:3000/cats/test/123 HTTP/1.1
+content-type: application/json
+
+### Create Cat
+POSt http://localhost:3000/cats/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "kitty",
+    "age": 10,
+    "test": 123
+}
+
+### Param validation
+GET http://localhost:3000/cats/validation/123 HTTP/1.1
+content-type: application/json
+
+### Create Cat with validation param zod
+POSt http://localhost:3000/cats/validation HTTP/1.1
+content-type: application/json
+
+{
+    "name": "kitty",
+    "age": 10,
+    "test": 123
+}
+
+### Create Cat with validation with class
+POSt http://localhost:3000/cats/class-validation HTTP/1.1
+content-type: application/json
+
+{
+    "name": "kitty",
+    "a": 123
+}
+
+### Param validation int
+GET http://localhost:8000/cats/pareseint/3 HTTP/1.1
+content-type: application/json
+
+### Param validation int with query
+GET http://localhost:8000/cats/query?id=123&flag=true HTTP/1.1
+content-type: application/json
+
+### Param validation int with query timout
+GET http://localhost:8000/cats/timeout?id=123&flag=true HTTP/1.1
+content-type: application/json
+
+### Param validation int with decorator
+GET http://localhost:8000/cats/decorator?id=123&flag=true HTTP/1.1
+content-type: application/json
