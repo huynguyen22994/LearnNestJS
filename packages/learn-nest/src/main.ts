@@ -6,8 +6,6 @@ import { AuthGuardGlobal } from './auth/global-auth.guard';
 import { LoggingGlobalInterceptor } from './interceptor/logger-global.interceptor';
 
 async function bootstrap() {
-  const bug = '22224'
-  const abc = '222223w3222w'
   const app = await NestFactory.create(AppModule);
   app.useGlobalFilters(new HttpExceptionFilter()); // use exception for global app
 
