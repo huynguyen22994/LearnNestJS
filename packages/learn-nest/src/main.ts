@@ -7,6 +7,7 @@ import { LoggingGlobalInterceptor } from './interceptor/logger-global.intercepto
 
 async function bootstrap() {
   const bug = '22224'
+  const abc = '2222'
   const app = await NestFactory.create(AppModule);
   app.useGlobalFilters(new HttpExceptionFilter()); // use exception for global app
 
