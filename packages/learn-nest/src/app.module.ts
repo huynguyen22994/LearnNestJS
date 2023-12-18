@@ -1,4 +1,5 @@
 import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import { DevtoolsModule } from '@nestjs/devtools-integration'
 import { AppController } from './app.controller';
 import { CatsModule } from './cat/cats.module'
 import { DogModule } from './dog/dog.module'
@@ -10,7 +11,13 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 
 @Module({
-  imports: [CatsModule, DogModule],
+  imports: [
+    CatsModule, 
+    DogModule,
+    // DevtoolsModule.register({
+    //   http: process.env.NODE_ENV !== 'production',
+    // }),
+  ],
   controllers: [AppController],
   providers: [AppService, DatabaseModule],
 })
