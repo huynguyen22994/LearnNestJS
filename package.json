@@ -24,6 +24,11 @@
             "prettier --write"
         ]
     },
+    "husky": {
+        "hooks": {
+          "pre-commit": "lint-front"
+        }
+    },
     "devDependencies": {
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.0.1",
